@@ -23,3 +23,7 @@ A função de alta ordem `objectMap` foi criada para permitir que eu pudesse faz
 
 
 [My Linkedin](https://www.linkedin.com/in/thiago-neves-29779031/)
+
+
+<img src="https://github.com/thiagomneves/
+languages-react-native/blob/master/android/ezgif-5-76110326ae.gif?raw=true" width="300"/>
