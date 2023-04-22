@@ -1,0 +1,9 @@
+{
+  "acronym": "la",
+  "name_english": "Latin",
+  "name_native": "Latina",
+  "translation": {
+    "title": "Salve in nostra applicatione!",
+    "description": "Haec applicatio ostendere intendit quomodo inter diversas linguas in React Native alternari possit!"
+  }
+}

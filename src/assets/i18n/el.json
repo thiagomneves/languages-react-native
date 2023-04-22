@@ -1,0 +1,9 @@
+{
+  "acronym": "el",
+  "name_english": "Greek",
+  "name_native": "Ελληνικά",
+  "translation": {
+    "title": "Καλώς ήλθατε στην εφαρμογή μας!",
+    "description": "Αυτή η εφαρμογή έχει ως στόχο να δείξει πώς να αλλάζετε μεταξύ διαφορετικών γλωσσών στο React Native!"
+  }
+}

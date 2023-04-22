@@ -1,0 +1,9 @@
+{
+  "acronym": "pl",
+  "name_english": "Polish",
+  "name_native": "Polski",
+  "translation": {
+    "title": "Witaj w naszej aplikacji!",
+    "description": "Ta aplikacja ma na celu pokazanie, jak przełączać się między różnymi językami w React Native!"
+  }
+}

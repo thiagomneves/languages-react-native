@@ -1,95 +1,47 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import React from 'react';
-import type {PropsWithChildren} from 'react';
+import React, {useState} from 'react';
+import {useTranslation} from 'react-i18next';
 import {
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
 } from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+import {Picker} from '@react-native-picker/picker';
+import './src/assets/i18n/i18n';
+import {languages} from './src/assets/i18n/languages';
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  const {t, i18n} = useTranslation();
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  const [currentLanguage, setLanguage] = useState<string>('en');
+
+  const changeLanguage = (value: string) => {
+    i18n
+      .changeLanguage(value)
+      .then(() => setLanguage(value))
+      .catch(err => console.log(err));
   };
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+    <SafeAreaView>
+      <StatusBar />
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <View style={styles.container}>
+          <Text style={styles.title}>{t('title')}</Text>
+          <Text style={styles.description}>{t('description')}</Text>
+          <Picker
+            selectedValue={currentLanguage}
+            onValueChange={changeLanguage}>
+            <Picker.Item label="Select an language" value="" />
+            {Object.values(languages).map(item => (
+              <Picker.Item
+                label={item.name_native}
+                value={item.acronym}
+                key={item.acronym}
+              />
+            ))}
+          </Picker>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -97,15 +49,15 @@ function App(): JSX.Element {
 }
 
 const styles = StyleSheet.create({
-  sectionContainer: {
+  container: {
     marginTop: 32,
     paddingHorizontal: 24,
   },
-  sectionTitle: {
+  title: {
     fontSize: 24,
     fontWeight: '600',
   },
-  sectionDescription: {
+  description: {
     marginTop: 8,
     fontSize: 18,
     fontWeight: '400',

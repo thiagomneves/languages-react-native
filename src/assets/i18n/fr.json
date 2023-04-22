@@ -1,0 +1,9 @@
+{
+  "acronym": "fr",
+  "name_english": "French",
+  "name_native": "Français",
+  "translation": {
+    "title": "Bienvenue dans notre application!",
+    "description": "Cette application vise à montrer comment passer d'une langue à l'autre dans React Native!"
+  }
+}

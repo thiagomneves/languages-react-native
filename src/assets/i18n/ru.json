@@ -1,0 +1,9 @@
+{
+  "acronym": "ru",
+  "name_english": "Russian",
+  "name_native": "Русский",
+  "translation": {
+    "title": "Добро пожаловать в наше приложение!",
+    "description": "Это приложение показывает, как переключаться между различными языками в React Native!"
+  }
+}

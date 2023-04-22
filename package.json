@@ -1,5 +1,9 @@
 {
   "name": "languagesReactNative",
+  "author": {
+    "name": "Thiago Neves",
+    "linkedin": "https://www.linkedin.com/in/thiago-neves-29779031/"
+  },
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,7 +14,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-picker/picker": "^2.4.10",
+    "i18next": "^22.4.15",
     "react": "18.2.0",
+    "react-i18next": "^12.2.0",
     "react-native": "0.71.7"
   },
   "devDependencies": {
